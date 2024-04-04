@@ -16,7 +16,8 @@ def encontrar_nome(pdf_path):
 
 def renomear_pdf(pdf_path, novo_nome):
     diretorio, nome_arquivo = os.path.split(pdf_path)
-    novo_nome = "".join(c for c in novo_nome if c.isalpha() or c in [' ', '.', '_', '-']) # Remove caracteres não alfabéticos do nome do arquivo
+    novo_nome = "".join(c for c in novo_nome if c.isalpha() or c in [' ', '.', '_', '-']) 
+    # Remove caracteres \nnão alfabéticos do nome do arquivo
     novo_nome_arquivo = os.path.join(diretorio, f"{novo_nome}.pdf")
     try:
         os.rename(pdf_path, novo_nome_arquivo)
